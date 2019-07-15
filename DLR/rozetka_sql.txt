@@ -1,0 +1,30 @@
+/*-- Вопрос# 1  --*/
+
+select TOP 3 * from EMP A; 
+
+/*-- Вопрос# 2  --*/
+
+ select 
+ DISTINCT(SALARY) 
+from EMP A 
+ order by salary desc 
+limit 1,1
+
+/*-- Вопрос# 3  --*/
+
+SELECT EMPNAME, DOB, DEPTNAME
+FROM EMP A JOIN DEPT B
+ON DEPTID. EMP A = DEPTID. DEPT B
+
+
+/*-- Вопрос# 4  --*/
+
+SELECT
+  EMPNAME, DOB,
+  (
+    (YEAR(CURRENT_DATE) - YEAR(DOB)) -                             
+    (DATE_FORMAT(CURRENT_DATE, '%m%d') < DATE_FORMAT(DOB, '%m%d'))
+  ) AS age, DEPTNAME
+
+FROM EMP A
+order by "AGE" DESC
